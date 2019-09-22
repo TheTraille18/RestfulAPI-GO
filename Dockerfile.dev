@@ -1,0 +1,14 @@
+FROM "golang:latest"
+
+RUN go get github.com/canthefason/go-watcher
+RUN go install github.com/canthefason/go-watcher/cmd/watcher
+RUN go get -u github.com/gorilla/mux
+
+WORKDIR '/go/restful2-go'
+
+COPY . .
+
+RUN go build
+
+# CMD ["./restful.go"]
+CMD ["watcher"]

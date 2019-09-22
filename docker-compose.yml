@@ -1,0 +1,11 @@
+version: '3'
+services:
+  go-lang-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4000:7000"
+    volumes:
+      - .:/go/restful2-go
+
