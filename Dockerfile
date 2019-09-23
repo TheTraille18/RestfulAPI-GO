@@ -9,6 +9,6 @@ WORKDIR '/go/restful2-go'
 COPY . .
 
 RUN go build
-
+EXPOSE 7000
 # CMD ["./restful.go"]
 CMD ["watcher"]
